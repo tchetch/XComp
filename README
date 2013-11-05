@@ -1,0 +1,34 @@
+XComp
+=====
+
+XComp compares any number of column in any number of file between them. Quick
+and dirty solution to a problem, it does actually understand only
+tab-separated files and does only string comparison (case-sensitive).
+Comparison is multi-threaded, one thread per comparison up to all your 
+processor cores minus one.
+
+Installation
+------------
+
+ - Run `make`. 
+ - Copy xcomp in /usr/local/bin.
+
+Todo
+----
+
+ - Support case-insensitive comparison, why not unicode stuff and more complex
+   comparison ...
+ - Improves output
+ - Support for different input file format
+ - Certainly bug fix
+
+Note
+----
+
+Uses a lot of pointers. Run it with valgrind as often as possible.
+
+Licence
+-------
+
+See LICENCE file
+
