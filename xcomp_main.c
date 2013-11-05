@@ -454,7 +454,7 @@ int main(int argc, char ** argv)
                     } else {
                         resf++;
                     }
-                /*    free(G(results)[i]); */
+                    free(G(results)[i]); 
                 }
                 group_free(results);
             }
