@@ -1,0 +1,4 @@
+mouton	chat	lapin
+agneau	renard	chien
+vipère	souris	tigre
+moineau	vache	pigeon

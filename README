@@ -13,6 +13,12 @@ Installation
  - Run `make`. 
  - Copy xcomp in /usr/local/bin.
 
+Usage
+-----
+
+Take on stdin lines in the form of "filepath:colunm_number\n"
+Try to run ./xcomp < test.in
+
 Todo
 ----
 

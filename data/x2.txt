@@ -1,0 +1,4 @@
+chat	mouton	lapin
+agneau	chien	chameau
+dromadaire	vipère	tigre
+moineau	vipère	pigeon
