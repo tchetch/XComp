@@ -1,3 +1,8 @@
+/* (c) 2013 Etienne Bagnoud <etienne.bagnoud@irovision.ch>
+ *
+ * This file is part of XComp project under MIT Licence.
+ * See LICENCE file.
+ */
 #ifndef XCOMP_MAIN_H__ 
 #define XCOMP_MAIN_H__
 

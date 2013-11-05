@@ -1,3 +1,8 @@
+/* (c) 2013 Etienne Bagnoud <etienne.bagnoud@irovision.ch>
+ *
+ * This file is part of XComp project under MIT Licence.
+ * See LICENCE file.
+ */
 #ifndef SYS_H__
 #define SYS_H__
 
