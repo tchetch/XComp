@@ -199,15 +199,21 @@ Group process_xfiles(XFile * f1, XFile * f2, int * early_stop)
         if(! (f1->column < bytetok_size(t1))) {
             make_result(r, RESULT_TOO_SHORT, i, -1);
         } else {
+            if(t1[f1->column][0] == '\0') {
+                make_result(r, RESULT_EMPTY, i, -1);
+                continue;
+            }
             for(j = 0; j < group_size(d2); j++) {
                 t2 = (Tokk)(G(d2)[j]);
                 if( ! (f2->column < bytetok_size(t2))) {
                     make_result(r, RESULT_TOO_SHORT, i, j);
                 } else {
-                    if(t1[f1->column][0] == '\0' || 
-                            t2[f2->column][0] == '\0') {
+                    if(t2[f2->column][0] == '\0') {
                         make_result(r, RESULT_EMPTY, i, j);
-                    } else if(strcmp(t1[f1->column], t2[f2->column]) == 0) {
+                        continue;
+                    } 
+                    
+                    if(strcmp(t1[f1->column], t2[f2->column]) == 0) {
                         make_result(r, RESULT_MATCH, i, j);
                     }
                 }
