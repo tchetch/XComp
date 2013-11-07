@@ -6,6 +6,8 @@
 #ifndef xcomp_h__
 #define xcomp_h__
 
+#include <stdio.h>
+
 struct SStack {
     int size;
     int current;
