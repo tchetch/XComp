@@ -6,10 +6,13 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <strings.h>
 
 #include "xcomp_main.h"
 
 extern const char * ERROR_STR[];
+
+int (*COMP_FUNCTION)(const char *, const char *);
 
 unsigned int howmany(unsigned int input) 
 {
@@ -213,7 +216,7 @@ Group process_xfiles(XFile * f1, XFile * f2, int * early_stop)
                         continue;
                     } 
                     
-                    if(strcmp(t1[f1->column], t2[f2->column]) == 0) {
+                    if(COMP_FUNCTION(t1[f1->column], t2[f2->column]) == 0) {
                         make_result(r, RESULT_MATCH, i, j);
                     }
                 }
@@ -331,6 +334,18 @@ int main(int argc, char ** argv)
             exit(-1);
         }
     }
+
+    COMP_FUNCTION = &strcmp;
+    for(i = 1; i < argc; i++) {
+        if(argv[i][0] == '-') {
+            if(strcasecmp(argv[i], "-ignorecase") == 0) {
+                COMP_FUNCTION = &strcasecmp;
+            } else {
+                printf("# Unknown \"%s\" argument.\n", argv[i]); 
+            }
+        }
+    }
+
     if(getparams(stdin, fileset)) {
         /* Discard search in same file, same column */
         discard_duplicate(fileset);

@@ -21,9 +21,7 @@ Try to run ./xcomp < test.in
 
 Todo
 ----
-
- - Support case-insensitive comparison, why not unicode stuff and more complex
-   comparison ...
+ - Unicode support
  - Improves output
  - Support for different input file format
  - Certainly bug fix
